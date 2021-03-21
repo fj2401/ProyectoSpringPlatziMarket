@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface ProductoCrudRepository extends CrudRepository<Producto, Integer> {
 
-    /**
+    /*
      * Otra forma de hacer una consulta es de manera nativa:
      * @Query(value = "SELECT * FROM productos WHERE id_categoria = ?", nativeQuery = true);
      * List<Producto> nombreQueQuerramos(int idCategoria);
