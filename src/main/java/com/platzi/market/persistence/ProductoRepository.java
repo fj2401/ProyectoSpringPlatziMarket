@@ -5,6 +5,7 @@ import com.platzi.market.domain.repository.ProductRepository;
 import com.platzi.market.persistence.crud.ProductoCrudRepository;
 import com.platzi.market.persistence.entity.Producto;
 import com.platzi.market.persistence.mapper.ProductMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,7 +20,11 @@ import java.util.Optional;
  */
 @Repository
 public class ProductoRepository implements ProductRepository {
+    @Autowired //esta anotacion da a entender a spring que los objetos que reciban esta notacion
+    // les va a ceder el control a spring para que cree esas intancias, a parte estos objetos deben
+    // de ser parte de spring(la clase debe de terner una notacion de spring)
     private ProductoCrudRepository productoCrudRepository;
+    @Autowired
     private ProductMapper mapper;
 
     //Recuperarmos todos los productos que hay en nuestra base de datos
