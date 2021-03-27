@@ -16,7 +16,7 @@ public interface ProductoCrudRepository extends CrudRepository<Producto, Integer
      * siempre es mejor usar los query methods por la flexivibidad que nos ofrece
      * a la hora de implementar nuestro codigo.
      */
-    List<Producto> findByIdCategoria(int idCategoria);
+    List<Producto> findByIdCategoriaOrderByNombreAsc(int idCategoria);
 
     //Nos devuelve los productos con menos conatidad de stock mas vendidos
     Optional<List<Producto>> findByCantidadStockLessThanAndEstado(int cantidadStock, boolean estado);
